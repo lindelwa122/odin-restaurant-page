@@ -10,6 +10,15 @@ const generateContent = () => {
       el.innerHTML = options.innerHTML;
     }
 
+    if (options.style) {
+      for (const val of Object.entries(options.style)) {
+        const property = val[0];
+        const value = val[1];
+
+        el.style[property] = value;
+      }
+    }
+
     return el;
   };
 
@@ -25,8 +34,6 @@ const generateContent = () => {
       tree.tagName === "img"
         ? _createImage(tree.options)
         : _createElement(tree.tagName, tree.options);
-
-    console.log("tree", tree);
 
     if (tree.children) {
       for (const child of tree.children) {

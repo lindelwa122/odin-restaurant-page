@@ -32,7 +32,7 @@ const generateContent = () => {
         const property = val[0];
         const value = val[1];
 
-        el.style[property] = value;
+        img.style[property] = value;
       }
     }
 

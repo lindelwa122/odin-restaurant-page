@@ -1,17 +1,9 @@
-import generateContent from "./generateContent";
-import { createStyleSheet } from "./generateContent";
-import navbar from "./navbar";
-import hero from "./heroSection";
-import informationSection from "./informationSection";
-import officeHours from "./officeHoursSection";
+import generateContent from "./module/generateContent";
+import { createStyleSheet } from "./module/generateContent";
+import home from "./routes/home";
 import "normalize.css";
 
-const DOM = {
-  tagName: "div",
-  children: [navbar(), hero(), informationSection(), officeHours()]
-}
-
-generateContent(DOM);
+generateContent(home);
 
 createStyleSheet.createCSSRule({
   "*": {

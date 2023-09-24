@@ -1,4 +1,4 @@
-import restaurantImage from "./restaurant-image.jpeg";
+import restaurantImage from "../assets/images/restaurant-image.jpeg";
 
 const hero = () => {
   const left = () => ({

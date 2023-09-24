@@ -1,7 +1,7 @@
-import cookie1 from "./cookie-001.jpg";
-import cookie2 from "./cookie-002.jpg";
-import cookie3 from "./cookie-003.jpg";
-import cookie4 from "./cookie-004.jpeg";
+import cookie1 from "../assets/images/cookie-001.jpg";
+import cookie2 from "../assets/images/cookie-002.jpg";
+import cookie3 from "../assets/images/cookie-003.jpg";
+import cookie4 from "../assets/images/cookie-004.jpeg";
 
 const info = (imgSrc, altText, caption) => {
   const img = () => ({

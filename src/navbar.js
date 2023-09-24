@@ -17,6 +17,15 @@ const navbar = () => {
     return {
       tagName: "ul",
       children: [li("Home"), li("Menu"), li("Contacts")],
+      options: {
+        style: {
+          display: "flex",
+          gap: "15px",
+          listStyle: "none",
+          margin: 0,
+          padding: 0,
+        }
+      }
     };
   };
 

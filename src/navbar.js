@@ -3,6 +3,12 @@ const navbar = () => {
     tagName: "div",
     options: {
       innerHTML: "PeanutButter Cookies",
+      style: {
+        color: "#f9faf8",
+        fontFamily: "'Dancing Script', cursive",
+        fontSize: "24px",
+        fontWeight: 700,
+      }
     },
   });
 

@@ -3,7 +3,7 @@ const generateContent = () => {
     const el = document.createElement(tagName);
 
     if (options.classList) {
-      el.classList = options.classList.split(" ");
+      el.classList = options.classList.join(" ");
     }
 
     if (options.innerHTML) {
@@ -26,9 +26,13 @@ const generateContent = () => {
         ? _createImage(tree.options)
         : _createElement(tree.tagName, tree.options);
 
-    for (const child of tree.children) {
-      const childEl = _createTreeNode(child);
-      el.appendChild(childEl);
+    console.log("tree", tree);
+
+    if (tree.children) {
+      for (const child of tree.children) {
+        const childEl = _createTreeNode(child);
+        el.appendChild(childEl);
+      }
     }
 
     return el;

@@ -1,22 +1,18 @@
 const navbar = () => {
-  const div = () => {
-    return {
-      tagName: "div",
-      options: {
-        innerHTML: "PeanutButter Cookies",
-      },
-    };
-  };
+  const div = () => ({
+    tagName: "div",
+    options: {
+      innerHTML: "PeanutButter Cookies",
+    },
+  });
 
   const ul = () => {
-    const li = (content) => {
-      return {
-        tagName: "li",
-        options: {
-          innerHTML: content,
-        },
-      };
-    };
+    const li = (content) => ({
+      tagName: "li",
+      options: {
+        innerHTML: content,
+      },
+    });
 
     return {
       tagName: "ul",
@@ -26,8 +22,8 @@ const navbar = () => {
 
   return {
     tagName: "nav",
-    children: [div(), ul()]
-  }
+    children: [div(), ul()],
+  };
 };
 
 export default navbar;

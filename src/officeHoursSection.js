@@ -1,11 +1,9 @@
 const officeHours = () => {
   const hours = () => {
-    const h3 = () => {
-      return {
-        tagName: "h3",
-        options: { innerHTML: "Hours" },
-      };
-    };
+    const h3 = () => ({
+      tagName: "h3",
+      options: { innerHTML: "Hours" },
+    });
 
     const h = [
       "Monday: 7am - 5pm",
@@ -22,12 +20,10 @@ const officeHours = () => {
       options: { innerHTML: item },
     }));
 
-    const ul = () => {
-      return {
-        tagName: "ul",
-        children: li,
-      };
-    };
+    const ul = () => ({
+      tagName: "ul",
+      children: li,
+    });
 
     return {
       tagName: "div",
@@ -35,17 +31,15 @@ const officeHours = () => {
     };
   };
 
-  const location = () => {
-    return {
-      tagName: "div",
-      options: {
-        innerHTML: `
-          <h3>Location</h3>
-          <div>128 Old Town, PeanutButter Drive, Dustinville</div>
-          `,
-      },
-    };
-  };
+  const location = () => ({
+    tagName: "div",
+    options: {
+      innerHTML: `
+        <h3>Location</h3>
+        <div>128 Old Town, PeanutButter Drive, Dustinville</div>
+        `,
+    },
+  });
 
   return {
     tagName: "div",

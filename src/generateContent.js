@@ -26,6 +26,16 @@ const generateContent = () => {
     const img = new Image();
     img.src = options.src;
     img.alt = options.alt;
+
+    if (options.style) {
+      for (const val of Object.entries(options.style)) {
+        const property = val[0];
+        const value = val[1];
+
+        el.style[property] = value;
+      }
+    }
+
     return img;
   };
 

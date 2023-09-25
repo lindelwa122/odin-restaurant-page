@@ -36,7 +36,5 @@ createStyleSheet.createCSSRule({
 
   ".price": {
     fontWeight: 500,
-    fontSize: "3rem",
-    color: "blue",
   },
 });

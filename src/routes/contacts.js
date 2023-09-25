@@ -29,6 +29,10 @@ const contacts = {
         },
       },
       children: [
+        {
+          tagName: "h1",
+          options: { innerHTML: "Contacts" },
+        },
         item("Email", "peanutbuttercookies@legacycookies.com"),
         item("Phone Number", "+44 (123) 4567 890"),
       ],

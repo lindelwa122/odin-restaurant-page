@@ -1,6 +1,3 @@
-import home from "../routes/home";
-// import menu from "../routes/menu";
-
 const navbar = () => {
   const div = () => ({
     tagName: "div",

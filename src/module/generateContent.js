@@ -113,6 +113,7 @@ const router = (() => {
 
     info.element.addEventListener("click", () => {
       _deactive(info.name);
+      console.log({ ele: info.element })
       info.element.classList.add("active");
 
       let to;

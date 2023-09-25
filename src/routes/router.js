@@ -1,10 +1,9 @@
 import menu from "./menu";
+import home from "./home";
 
 const routes = [
-  {
-    route: menu,
-    id: "menu"
-  }
-]
+  { id: "menu", route: menu },
+  { id: "home", route: home },
+];
 
 export default routes;

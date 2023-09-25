@@ -16,14 +16,13 @@ const navbar = () => {
   });
 
   const ul = () => {
-    const li = (content, id) => ({
+    const li = (content, to) => ({
       tagName: "li",
       options: {
         innerHTML: content,
         router: {
-          id: id,
           name: "navigation",
-          to: "menu",
+          to: to,
         }
       },
     });

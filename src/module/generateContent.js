@@ -58,7 +58,7 @@ const generateContent = () => {
     // clear content
     document.querySelector("#content").innerHTML = "";
     document.querySelector("#content").appendChild(el);
-    // createStyleSheet.reRenderCSSRules();
+    createStyleSheet.reRenderCSSRules();
   };
 
   return { addTreeToTheDOM };
@@ -79,12 +79,12 @@ const createStyleSheet = (() => {
   const _CSSRules = [];
   const reRenderCSSRules = () => {
     for (const rule of _CSSRules) {
-      createCSSRule(rule);
+      createCSSRule(rule, false);
     }
   };
 
-  const createCSSRule = (style) => {
-    _CSSRules.push(style);
+  const createCSSRule = (style, save=true) => {
+    save && _CSSRules.push(style);
 
     for (const val of Object.entries(style)) {
       const selector = val[0];

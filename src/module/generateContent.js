@@ -42,14 +42,24 @@ const generateContent = () => {
       }
     }
 
+    if (tree.options && tree.options.router) {
+      router.configRouter(
+        Object.assign({}, tree.options.router, { element: el })
+      );
+    }
+
+    tree.options && tree.options.pageId && router.pages.push(tree);
+
     return el;
   };
 
   const addTreeToTheDOM = (tree) => {
     const el = _createTreeNode(tree);
+    // clear content
+    document.querySelector("#content").innerHTML = "";
     document.querySelector("#content").appendChild(el);
-    createStyleSheet.reRenderCSSRules();
-  }
+    // createStyleSheet.reRenderCSSRules();
+  };
 
   return { addTreeToTheDOM };
 };
@@ -64,14 +74,14 @@ const createStyleSheet = (() => {
 
       el.style[property] = value;
     }
-  }
+  };
 
   const _CSSRules = [];
   const reRenderCSSRules = () => {
     for (const rule of _CSSRules) {
       createCSSRule(rule);
     }
-  }
+  };
 
   const createCSSRule = (style) => {
     _CSSRules.push(style);
@@ -82,13 +92,55 @@ const createStyleSheet = (() => {
 
       const elements = document.querySelectorAll(selector);
 
-      elements.length > 0 && elements.forEach((el) => {
-        addStyle(el, declaration);
-      });      
+      elements.length > 0 &&
+        elements.forEach((el) => {
+          addStyle(el, declaration);
+        });
     }
-  }
+  };
 
   return { addStyle, createCSSRule, reRenderCSSRules };
 })();
 
 export { createStyleSheet };
+
+const router = (() => {
+  const pages = [];
+  const _routers = [];
+
+  const configRouter = (info) => {
+    _routers.push(info);
+
+    info.element.addEventListener("click", () => {
+      _deactive(info.name);
+      info.element.classList.add("active");
+
+      let to;
+      for (const page of pages) {
+        if (page.id === info.to) {
+          to = page.route;
+        }
+      }
+
+      generateContent().addTreeToTheDOM(to);
+    });
+  };
+
+  const _deactive = (name) => {
+    for (const router of _routers) {
+      if (router.name === name) {
+        router.element.classList.remove("active");
+      }
+    }
+  };
+
+  const register = (routes) => {
+    for (const route of routes) {
+      pages.push(route);
+    }
+  };
+
+  return { configRouter, register, pages };
+})();
+
+export { router };

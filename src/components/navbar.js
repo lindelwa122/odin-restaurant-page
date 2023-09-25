@@ -1,3 +1,6 @@
+import home from "../routes/home";
+// import menu from "../routes/menu";
+
 const navbar = () => {
   const div = () => ({
     tagName: "div",
@@ -13,16 +16,21 @@ const navbar = () => {
   });
 
   const ul = () => {
-    const li = (content) => ({
+    const li = (content, id) => ({
       tagName: "li",
       options: {
         innerHTML: content,
+        router: {
+          id: id,
+          name: "navigation",
+          to: "menu",
+        }
       },
     });
 
     return {
       tagName: "ul",
-      children: [li("Home"), li("Menu"), li("Contacts")],
+      children: [li("Home", "home"), li("Menu", "menu"), li("Contacts", "contacts")],
       options: {
         style: {
           display: "flex",

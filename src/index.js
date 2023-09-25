@@ -1,9 +1,12 @@
-import generateContent from "./module/generateContent";
+import generateContent, { router } from "./module/generateContent";
 import { createStyleSheet } from "./module/generateContent";
 import home from "./routes/home";
 import "normalize.css";
 
+import routes from "./routes/router";
+
 generateContent(home);
+router.register(routes);
 
 createStyleSheet.createCSSRule({
   "*": {

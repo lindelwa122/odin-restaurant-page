@@ -1,5 +1,4 @@
-import generateContent, { router } from "./module/generateContent";
-import { createStyleSheet } from "./module/generateContent";
+import generateContent, { createStyleSheet, router } from "./module/generateContent";
 import home from "./routes/home";
 import "normalize.css";
 

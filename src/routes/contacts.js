@@ -35,6 +35,7 @@ const contacts = {
         },
         item("Email", "peanutbuttercookies@legacycookies.com"),
         item("Phone Number", "+44 (123) 4567 890"),
+        item("Address", "128 Old Town, PeanutButter Drive, Dustinville"),
       ],
     },
   ],
